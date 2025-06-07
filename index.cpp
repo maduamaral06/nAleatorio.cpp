@@ -17,18 +17,21 @@ int main(){
     cin >> nDigitado;
 
     if(nDigitado < 0 || nDigitado > 50){
-        cout << "Número Inválido";
-        return 0;
+        cout << "Número inválido!";
     }
 
     while (nDigitado != nAleatorio)
     {
-        if(nDigitado < nAleatorio){
+        if(nDigitado < 0 || nDigitado > 50){
+            cout << "\n Número inválido! Digite um número entre 0 e 50: ";
+            cin >> nDigitado;
+        }
+        else if(nDigitado < nAleatorio){
             cout << "\n🔺 Quase! O número é maior que isso. Tente novamente";
             cout << "\n Digite seu palpite: ";
             cin >> nDigitado;
         }
-        if(nDigitado > nAleatorio){
+        else if(nDigitado > nAleatorio){
             cout << "\n🔻 Ih, passou! O número é menor. Tente de novo!";
             cout << "\n Digite seu palpite: ";
             cin >> nDigitado;  
